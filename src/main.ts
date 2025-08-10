@@ -1,3 +1,7 @@
+import crypto from 'crypto';
+
+(global as any).crypto = require('crypto');
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
