@@ -2,10 +2,10 @@ import Redis from "ioredis";
 
 const redis = new Redis({
   host: process.env.REDISHOST,
-  port: process.env.REDISPORT,
-  username: process.env.REDISUSER,
+  port: Number(process.env.REDISPORT),
+  username: process.env.REDISUSER || "default",
   password: process.env.REDISPASSWORD,
-  tls: {} // залишай, якщо Railway вимагає TLS
+  tls: {} // Railway вимагає TLS, залишаємо
 });
 
 export default redis;
