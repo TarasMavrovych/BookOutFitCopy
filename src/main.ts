@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import redis from './redis/redis';
+import redis from 'redis/redis';
 
 
 
