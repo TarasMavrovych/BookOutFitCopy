@@ -20,7 +20,7 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: process.env.CLIENT_ORIGIN ?? 'http://localhost:3000',
+    origin: 'https://book-out-fit-qmwk.vercel.app',
     credentials: true,
   });
 
