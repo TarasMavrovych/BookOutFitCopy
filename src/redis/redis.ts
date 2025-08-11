@@ -5,7 +5,7 @@ const redis = new Redis({
   port: Number(process.env.REDISPORT),
   username: process.env.REDISUSER || "default",
   password: process.env.REDISPASSWORD,
-  tls: {} // Railway вимагає TLS, залишаємо
+  tls: {rejectUnauthorized: false} // Railway вимагає TLS, залишаємо
 });
 
 export default redis;
