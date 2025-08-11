@@ -1,4 +1,7 @@
 import crypto from 'crypto';
+import redis from "./redis";
+
+
 
 (global as any).crypto = require('crypto');
 
@@ -42,7 +45,10 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document);
-
+  
+await redis.set("key", "value");
+console.log(await redis.get("key"));
+  
   await app.listen(process.env.PORT ?? 4000, '0.0.0.0');
 }
 void bootstrap();
